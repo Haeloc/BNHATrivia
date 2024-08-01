@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boku no Hero Academia Guessing Game</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="https://www.svgrepo.com/show/122178/superhero.svg">
+</head>
+<body>
+    <div class="container">
+        <h1>Boku no Hero Academia - Wordle</h1>
+        <p>Guess the character:</p>
+        
+        <!-- Custom autocomplete input for guessing -->
+        <div class="autocomplete">
+            <input type="text" id="guessInput" placeholder="Type a character's name" autocomplete="off">
+            <div id="autocompleteResults" class="autocomplete-results hidden"></div>
+        </div>
+
+        <button id="submitBtn">Submit</button>
+
+        <!-- Result tables container -->
+        <div id="resultsContainer"></div>
+
+        <p id="finalResult" class="hidden"></p>
+        <button id="restartBtn" class="hidden">Play Again</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
