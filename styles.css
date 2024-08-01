@@ -15,7 +15,6 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     padding: 30px;
     max-width: 800px;
-    width: 100%;
     text-align: center;
     margin: auto;
 }
@@ -31,29 +30,26 @@ p {
 }
 
 #guessInput {
-    width: 90%; /* Adjust width as needed */
-    padding: 10px;
+    width: 100%; /* Make text field larger */
+    padding: 12px;
     border-radius: 5px;
     border: 1px solid #ddd;
-    font-size: 1em;
+    font-size: 1.2em;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     box-sizing: border-box;
-    margin: 0 auto; /* Center the input field */
+    text-align: center; /* Center text in the input field */
 }
 
 button {
-    padding: 10px 20px;
+    padding: 12px 25px;
     background-color: #3498db;
     color: white;
     border: none;
     border-radius: 5px;
-    font-size: 1em;
+    font-size: 1.2em;
     cursor: pointer;
     margin-top: 10px;
     transition: background-color 0.3s ease;
-    display: block; /* Ensure the button is block-level */
-    margin-left: auto;
-    margin-right: auto;
 }
 
 button:hover {
@@ -67,22 +63,24 @@ button:hover {
 #resultsContainer {
     margin-top: 20px;
     width: 100%;
-    overflow-x: auto;
     box-sizing: border-box;
+}
+
+.result-table-container {
+    margin-top: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
 }
 
 .result-table {
     width: 100%;
-    margin-top: 20px;
     border-collapse: collapse;
 }
 
-.result-table, .result-table th, .result-table td {
-    border: 1px solid #ddd;
-}
-
 .result-table th, .result-table td {
-    padding: 10px;
+    padding: 12px;
     text-align: center;
 }
 
@@ -107,25 +105,22 @@ button:hover {
     color: #2c3e50;
 }
 
+/* General styling for autocomplete */
 .autocomplete {
     position: relative;
     display: inline-block;
-    width: 100%; /* Ensure the autocomplete is full-width */
-    max-width: 90%; /* Limit the max width */
-    margin: 0 auto; /* Center the autocomplete */
 }
 
 #guessInput {
-    width: 100%; /* Adjust width as needed */
-    padding: 10px;
+    width: 100%; /* Ensure larger text field */
+    padding: 12px;
     border-radius: 5px;
     border: 1px solid #ddd;
-    font-size: 1em;
+    font-size: 1.2em;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     box-sizing: border-box;
-    text-align: center; /* Center text inside the input field */
+    text-align: center;
 }
-
 
 .autocomplete-results {
     position: absolute;
@@ -145,13 +140,13 @@ button:hover {
 .autocomplete-item {
     display: flex;
     align-items: center;
-    padding: 10px;
+    padding: 12px;
     cursor: pointer;
 }
 
 .autocomplete-item img {
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     margin-right: 10px;
 }
@@ -159,4 +154,13 @@ button:hover {
 .autocomplete-item:hover {
     background-color: #3498db;
     color: white;
+}
+
+/* Additional styles for result images */
+.result-table img {
+    width: 80px; /* Larger size for the result image */
+    height: 80px;
+    border-radius: 50%;
+    margin-right: 10px;
+    vertical-align: middle;
 }
