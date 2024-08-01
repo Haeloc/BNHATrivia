@@ -1,4 +1,4 @@
-// Array of character data with image URLs
+// Character data with image URLs
 const characters = [
     {
         name: "Izuku Midoriya",
@@ -115,37 +115,31 @@ document.addEventListener('click', (event) => {
 // Function to check traits
 function checkTraits(guessedCharacter) {
     const traits = ['gender', 'quirk', 'hairColor', 'occupation', 'fightingStyle', 'eyeColor', 'status', 'affiliation'];
-    
-    // Construct the result table with the guessed character's image
-    let row = `
-        <tr>
-            <td rowspan="2" style="width: 120px;">
-                <img src="${guessedCharacter.image}" alt="${guessedCharacter.name}" style="width: 100px; height: auto; border-radius: 5px;">
-            </td>
-            <td colspan="2">
-                <table class="result-table">
-                    <thead>
-                        <tr>
-                            <th>Category</th>
-                            <th>Guessed Character</th>
-                            <th>Selected Character</th>
-                        </tr>
-                    </thead>
-                    <tbody>`;
-    
+    let row = `<div class="result-table-container">
+        <img src="${guessedCharacter.image}" alt="${guessedCharacter.name}">
+        <table class="result-table">
+            <thead>
+                <tr>
+                    <th>Category</th>
+                    <th>Entered Information</th>
+                    <th>Result</th>
+                </tr>
+            </thead>
+            <tbody>`;
+
     traits.forEach(trait => {
-        const expected = guessedCharacter[trait]; // The guessed character's trait
-        const result = selectedCharacter[trait];  // The actual character's trait
+        const expected = selectedCharacter[trait];
+        const result = guessedCharacter[trait];
         row += `<tr>
             <td>${trait.charAt(0).toUpperCase() + trait.slice(1)}</td>
-            <td>${expected}</td>
-            <td class="${expected.toLowerCase() === result.toLowerCase() ? 'result-green' : 'result-red'}">
-                ${expected.toLowerCase() === result.toLowerCase() ? '✔️' : '❌'}
+            <td>${result}</td>
+            <td class="${result.toLowerCase() === expected.toLowerCase() ? 'result-green' : 'result-red'}">
+                ${result.toLowerCase() === expected.toLowerCase() ? '✔️' : '❌'}
             </td>
         </tr>`;
     });
 
-    row += `</tbody></table></td></tr>`;
+    row += `</tbody></table></div>`;
     document.getElementById('resultsContainer').innerHTML += row;
 }
 
